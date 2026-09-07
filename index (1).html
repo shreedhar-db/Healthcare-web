@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Strategist - LinkedIn Profile Strategy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1b1c1a;
+            background: linear-gradient(90deg, #fbf9f5 0%, #fbf9f5 100%), linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(251, 249, 245, 0.95);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid #c4c7c7;
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e5ded0;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444748;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+
+        nav a.active {
+            color: #000;
+            border-bottom: 2px solid #775a19;
+            padding-bottom: 0.25rem;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .cta-button {
+            background: #000;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 8rem 4rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+
+        .hero-content h1 .italic {
+            font-style: italic;
+            color: #775a19;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e5ded0;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: #444748;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #000;
+            border: 2px solid #775a19;
+            padding: 0.85rem 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: #775a19;
+            color: #fff;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #e5ded0;
+            border-radius: 12px;
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .floating-card {
+            position: absolute;
+            background: #fdfbf7;
+            border: 1px solid #e5ded0;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0px 10px 32px 4px rgba(0, 0, 0, 0.04);
+        }
+
+        .floating-card-1 {
+            bottom: -1.5rem;
+            left: -1.5rem;
+            width: 200px;
+        }
+
+        .floating-card-2 {
+            top: 25%;
+            right: -2rem;
+            width: 190px;
+        }
+
+        .floating-card h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #444748;
+            margin-bottom: 0.25rem;
+        }
+
+        .floating-card p {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* Social Proof Strip */
+        .social-proof {
+            background: #f5f3ef;
+            border-top: 1px solid #e5ded0;
+            border-bottom: 1px solid #e5ded0;
+            padding: 2rem 4rem;
+            opacity: 0.7;
+        }
+
+        .social-proof-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .proof-item {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .proof-icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        .proof-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1b1c1a;
+            letter-spacing: 0.4px;
+        }
+
+        /* About Section */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 5rem 4rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            position: relative;
+            width: 100%;
+            border: 1px solid #e5ded0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 16px;
+            background: #e9c176;
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #000;
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            color: #444748;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .methodology-box {
+            background: #f5f3ef;
+            border: 1px solid #e5ded0;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .methodology-box h3 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #775a19;
+            letter-spacing: 1.2px;
+            margin-bottom: 1rem;
+        }
+
+        .methodology-steps {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .methodology-step {
+            flex: 1;
+            text-align: center;
+        }
+
+        .methodology-step-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 0.5rem;
+            background: #f5f3ef;
+        }
+
+        .methodology-step p {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #1b1c1a;
+            margin: 0;
+        }
+
+        .methodology-arrow {
+            width: 16px;
+            height: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Services Section */
+        .services {
+            background: #fdfbf7;
+            border: 1px solid #e5ded0;
+            border-radius: 24px;
+            padding: 5rem 4rem;
+            margin: 0 4rem;
+            max-width: 1280px;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .services-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        .services-header p {
+            font-size: 1rem;
+            color: #444748;
+            max-width: 672px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #fbf9f5;
+            border: 1px solid #e5ded0;
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .service-card.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #775a19;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            border-radius: 0 12px 0 8px;
+        }
+
+        .service-icon {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 1.5rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        .service-card p {
+            font-size: 0.875rem;
+            color: #444748;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-list {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-list li {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #1b1c1a;
+            margin-bottom: 0.5rem;
+            list-style: none;
+        }
+
+        .service-list li::before {
+            content: '—';
+            color: #775a19;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .service-link {
+            border-bottom: 1px solid #000;
+            color: #000;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+        }
+
+        /* Offer Section */
+        .offer {
+            background: #000;
+            color: #fff;
+            padding: 5rem 4rem;
+            margin-top: 4rem;
+        }
+
+        .offer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .offer-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .offer-content p {
+            font-size: 1rem;
+            color: #c8c6c5;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .offer-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .offer-list li {
+            display: flex;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .offer-list li::before {
+            content: '✓';
+            color: #e9c176;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .form-section {
+            background: #fbf9f5;
+            border: 1px solid #e5ded0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .form-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #000;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #444748;
+            letter-spacing: 1.2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #c4c7c7;
+            padding: 0.625rem 0;
+            font-size: 0.875rem;
+            color: #1b1c1a;
+            font-family: inherit;
+            background: transparent;
+        }
+
+        .form-group input::placeholder {
+            color: #6b7280;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-bottom-color: #775a19;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: background 0.2s;
+        }
+
+        .form-submit:hover {
+            background: #333;
+        }
+
+        .form-disclaimer {
+            font-size: 0.75rem;
+            color: #747878;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.875rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #efeeea;
+            border-top: 1px solid #c4c7c7;
+            padding: 2rem 4rem;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .footer-copy {
+            font-size: 0.875rem;
+            color: #1b1c1a;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #4a463c;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero, .about {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+
+            .header-content, .services {
+                padding: 0 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .social-proof-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .methodology-steps {
+                flex-direction: column;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="https://www.figma.com/api/mcp/asset/10e30eba-7511-4fe8-a217-d3afcbb1257d.png" alt="Logo">
+                </div>
+                <div class="brand-name">Executive Strategist</div>
+            </div>
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Results</a>
+                <a href="#">Testimonials</a>
+                <a href="#">FAQ</a>
+                <button class="cta-button">Get Your Profile Reviewed</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tag">Premium LinkedIn Strategy</span>
+            <h1>Your LinkedIn Profile Shouldn't Just Exist. <span class="italic">It Should Work For You.</span></h1>
+            <p class="hero-description">Transform your digital presence into a bespoke asset that attracts high-caliber opportunities, builds unshakeable credibility, and drives meaningful conversions.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">START WITH ₹1</button>
+                <button class="btn-secondary">EXPLORE SERVICES</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://www.figma.com/api/mcp/asset/ce21a3a9-5a6b-4619-bc65-e924003900fc.png" alt="Executive Portrait">
+            <div class="floating-card floating-card-1">
+                <h4>Top Voice</h4>
+                <p>LinkedIn Strategist</p>
+            </div>
+            <div class="floating-card floating-card-2">
+                <p style="font-size: 1.5rem; margin-bottom: 0.25rem;">300%</p>
+                <h4>Profile Views</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Strip -->
+    <section class="social-proof">
+        <div class="social-proof-content">
+            <div class="proof-item">
+                <div class="proof-icon">📊</div>
+                <div class="proof-text">500+ Profiles Transformed</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-icon">⭐</div>
+                <div class="proof-text">Rated 5.0 by Executives</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-icon">👥</div>
+                <div class="proof-text">10M+ Client Impressions</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-icon">🏢</div>
+                <div class="proof-text">Fortune 500 Clients</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-image-wrapper">
+            <div class="about-image">
+                <img src="https://www.figma.com/api/mcp/asset/7ff44504-0e18-4430-9192-0ac7107d0888.png" alt="About">
+            </div>
+        </div>
+        <div class="about-content">
+            <h2>The Architecture of Influence</h2>
+            <p>I believe your professional narrative deserves the same strategic rigor as your business plans. Moving beyond generic templates, I craft bespoke LinkedIn profiles that act as 24/7 ambassadors for your personal brand.</p>
+            <div class="methodology-box">
+                <h3>The Methodology</h3>
+                <div class="methodology-steps">
+                    <div class="methodology-step">
+                        <p>Clarity</p>
+                    </div>
+                    <div class="methodology-arrow">→</div>
+                    <div class="methodology-step">
+                        <p>Credibility</p>
+                    </div>
+                    <div class="methodology-arrow">→</div>
+                    <div class="methodology-step">
+                        <p>Connection</p>
+                    </div>
+                    <div class="methodology-arrow">→</div>
+                    <div class="methodology-step">
+                        <p>Conversion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="services-header">
+            <h2>Curated Strategic Services</h2>
+            <p>Elevate your positioning with tailored solutions designed for executives, founders, and high-impact professionals.</p>
+        </div>
+        <div class="services-grid">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Profile Overhaul</h3>
+                <p>A complete top-to-bottom rewrite of your LinkedIn profile, optimizing for searchability and narrative impact.</p>
+                <ul class="service-list">
+                    <li>SEO Optimization</li>
+                    <li>Custom Banner Design</li>
+                </ul>
+                <a href="#" class="service-link">Inquire Now</a>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card popular">
+                <div class="service-icon"></div>
+                <h3>Content Strategy</h3>
+                <p>A 30-day bespoke content calendar designed to establish thought leadership and engage your ideal audience.</p>
+                <ul class="service-list">
+                    <li>Topic Ideation</li>
+                    <li>Engagement Tactics</li>
+                </ul>
+                <a href="#" class="service-link">Inquire Now</a>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>1:1 Consultation</h3>
+                <p>A focused 60-minute strategy session to untangle your professional narrative and set a clear direction.</p>
+                <ul class="service-list">
+                    <li>Profile Audit</li>
+                    <li>Actionable Roadmap</li>
+                </ul>
+                <a href="#" class="service-link">Inquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer">
+        <div class="offer-container">
+            <div class="offer-content">
+                <span class="tag" style="background: #e9c176; color: #5d4201;">Limited Time Offer</span>
+                <h2>Unlock Your Profile's Potential for Just ₹1</h2>
+                <p>Get a comprehensive, personalized video review of your current LinkedIn profile. I'll highlight exactly what's holding you back and provide 3 immediate action items to increase your visibility.</p>
+                <ul class="offer-list">
+                    <li>Detailed Headline & Summary Analysis</li>
+                    <li>Visual Branding Critique</li>
+                    <li>Keyword Optimization Check</li>
+                </ul>
+            </div>
+
+            <div class="form-section">
+                <h3>Claim Your ₹1 Review</h3>
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required>
+                    </div>
+                    <button type="submit" class="form-submit">SUBMIT & PAY ₹1</button>
+                    <p class="form-disclaimer">Secure payment via Razorpay. Review delivered within 48 hours.</p>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">Executive Strategist</div>
+            <div class="footer-copy">© 2024 Executive Strategist. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyEXTVc-_oMJ93wIBUARnEBjg6XSobKadNuKEVz0EbB1XSIvSNZt4mSiIWDbO2v3Mfvsg/exec";
+        const form = document.getElementById("leadForm");
+        const messageEl = document.getElementById("formMessage");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+
+            if (!name || !email || !phone) {
+                showError("Please fill in all fields.");
+                return;
+            }
+
+            // Build URL with query parameters
+            const url = SCRIPT_URL + "?" + new URLSearchParams({ name, email, phone });
+
+            // Fetch with no-cors mode, GET method
+            fetch(url, { method: "GET", mode: "no-cors" })
+                .then(() => showSuccess())
+                .catch(() => showError("An error occurred. Please try again."));
+        });
+
+        function showSuccess() {
+            messageEl.textContent = "✓ Thank you! Your submission has been received. Check your email for next steps.";
+            messageEl.className = "form-message success";
+            form.reset();
+            setTimeout(() => {
+                messageEl.className = "form-message";
+            }, 5000);
+        }
+
+        function showError(msg) {
+            messageEl.textContent = "✗ " + msg;
+            messageEl.className = "form-message error";
+            setTimeout(() => {
+                messageEl.className = "form-message";
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
